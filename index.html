@@ -1,26 +1,43 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Polaroid Memory Wall</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="wrapper">
-    <h2 id="question">Do You Love me? </h2>
-    <img
-         id="gif"
-         alt="gif"
-         src="https://media.giphy.com/media/FTGah7Mx3ss04PcasF/giphy.gif"
-         />
-    <div id="btn-group">
-      <button id="yes-btn">Yes</button>
-      <button id="no-btn">No</button>
+  <header class="topbar">
+    <h1>Our Polaroid Memory Wall</h1>
+    <div class="controls">
+      <label class="upload-btn">
+        + Add Photos
+        <input id="fileInput" type="file" accept="image/*" multiple hidden>
+      </label>
+      <button id="clearBtn" class="ghost">Clear Wall</button>
     </div>
+  </header>
+
+  <main>
+    <section id="wall" class="wall" aria-live="polite"></section>
+    <div class="drop-hint" id="dropHint">Drop images here to add</div>
+  </main>
+
+  <!-- Modal for viewing single polaroid -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <button id="modalClose" class="modal-close" aria-label="Close">✕</button>
+    <button id="prevBtn" class="nav">◀</button>
+    <div class="modal-content">
+      <img id="modalImg" alt="Memory" />
+      <figcaption id="modalCaption"></figcaption>
+    </div>
+    <button id="nextBtn" class="nav">▶</button>
   </div>
 
-  <script src="scrips.js"></script>
+  <footer class="footer">
+    <small>Tip: click a polaroid to enlarge. Photos are saved locally in your browser.</small>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
