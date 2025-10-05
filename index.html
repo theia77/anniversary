@@ -1,42 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Polaroid Memory Wall</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown to Forever</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="topbar">
-    <h1>Our Polaroid Memory Wall</h1>
-    <div class="controls">
-      <label class="upload-btn">
-        + Add Photos
-        <input id="fileInput" type="file" accept="image/*" multiple hidden>
-      </label>
-      <button id="clearBtn" class="ghost">Clear Wall</button>
-    </div>
-  </header>
+  <div class="container">
+    <h1>Our Love Story</h1>
+    <h2>Time Since We Met</h2>
 
-  <main>
-    <section id="wall" class="wall" aria-live="polite"></section>
-    <div class="drop-hint" id="dropHint">Drop images here to add</div>
-  </main>
-
-  <!-- Modal for viewing single polaroid -->
-  <div id="modal" class="modal" aria-hidden="true">
-    <button id="modalClose" class="modal-close" aria-label="Close">✕</button>
-    <button id="prevBtn" class="nav">◀</button>
-    <div class="modal-content">
-      <img id="modalImg" alt="Memory" />
-      <figcaption id="modalCaption"></figcaption>
+    <div id="countdown" class="countdown">
+      <div><span id="days">0</span><span>Days</span></div>
+      <div><span id="hours">0</span><span>Hours</span></div>
+      <div><span id="minutes">0</span><span>Minutes</span></div>
+      <div><span id="seconds">0</span><span>Seconds</span></div>
     </div>
-    <button id="nextBtn" class="nav">▶</button>
+
+    <p id="message" class="message"></p>
   </div>
-
-  <footer class="footer">
-    <small>Tip: click a polaroid to enlarge. Photos are saved locally in your browser.</small>
-  </footer>
 
   <script src="script.js"></script>
 </body>
